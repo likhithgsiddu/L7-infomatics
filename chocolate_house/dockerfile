@@ -1,0 +1,14 @@
+# Use Python official image as a base
+FROM python:3.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy files into the container
+COPY . .
+
+# Install required packages
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Run the Python application
+CMD ["python", "app.py"]
